@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Màn hình cập nhật</title>
+   
+</head>
+<body>
+    <h2>Lập trình web</h2>
+    <p>http://php.local</p>
+    <div>
+        <a href="#">Home</a> | <a href="#">Đăng nhập</a> | <a href="#">Đăng ký</a>
+    </div>
+    <br>
+    <div class="container">
+        <h3>Màn hình cập nhật</h3>
+        <form action="update.php" method="POST">
+            <label>Username</label>
+            <input type="text" name="username" required>
+
+            <label>Mật khẩu</label>
+            <input type="password" name="password" required>
+
+            <label>Nhập lại mật khẩu</label>
+            <input type="password" name="confirm_password" required>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <button type="submit" class="btn">Đăng ký</button>
+        </form>
+        <p><a href="login.html">Đã có tài khoản</a></p>
+    </div>
+    <br>
+    <footer>Lập trình web @01/2024</footer>
+</body>
+</html>
