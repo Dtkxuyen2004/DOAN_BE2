@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PasswordResetController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +40,21 @@ Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 
 
 Route::get('/ratings', [RatingController::class, 'index'])->name('ratings.index');
+
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/thongtincanhan', [UserController::class, 'show'])->name('profile.show');
+    Route::post('/thongtincanhan/update', [UserController::class, 'update'])->name('profile.update');
+});
+
+
+
+
+// **BỎ token, chỉ dùng email**
+Route::get('password-reset', [PasswordResetController::class, 'showForm'])->name('password.reset.form');
+Route::post('password-reset', [PasswordResetController::class, 'resetPassword'])->name('password.update');
 
 
 
