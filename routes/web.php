@@ -66,7 +66,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::get('/password-reset', [PasswordResetController::class, 'showForm'])->name('password.reset');
-Route::post('/password-reset', [PasswordResetController::class, 'updatePassword']);
+Route::get('/password/reset', [PasswordResetController::class, 'showForm'])->name('password.reset');
+Route::post('/password/reset', [PasswordResetController::class, 'updatePassword']);
 
 
