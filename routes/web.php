@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\CustomerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +18,15 @@ use App\Http\Controllers\RatingController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+
+
+
+
+
+Route::resource('customers', CustomerController::class);
+
 
 Route::get('/', [CrudUserController::class, 'index'])->name('index');
 Route::get('dashboard', [CrudUserController::class, 'dashboard']);
@@ -38,5 +51,16 @@ Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 
 Route::get('/ratings', [RatingController::class, 'index'])->name('ratings.index');
 
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/thongtincanhan', [UserController::class, 'show'])->name('profile.show');
+    Route::post('/thongtincanhan/update', [UserController::class, 'update'])->name('profile.update');
+});
+
+
+Route::get('/password-reset', [PasswordResetController::class, 'showForm'])->name('password.reset');
+Route::post('/password-reset', [PasswordResetController::class, 'updatePassword']);
 
 
