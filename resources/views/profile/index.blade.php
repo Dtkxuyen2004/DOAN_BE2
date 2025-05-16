@@ -44,7 +44,7 @@
                             <label for="phone" class="form-label">Thay đổi số điện thoại</label>
                             <input type="text" id="phone" name="phone" class="form-control" value="{{ old('phone', $user->phone) }}">
                         </div>
-                        <button type="submit" class="btn btn-primary">Cập nhật thông tin</button>
+                        <button type="submit" class="btn btn-primary">Cập nhật lại thông tin</button>
                     </form>
                     
                     <form action="{{ route('logout') }}" method="POST" class="mt-3">
