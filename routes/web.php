@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Schema;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::get('/check-customers-table', function () {
 
 
 
+Route::resource('payments', PaymentController::class);
 
 Route::resource('customers', CustomerController::class);
 
