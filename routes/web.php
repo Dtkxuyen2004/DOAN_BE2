@@ -6,7 +6,7 @@ use App\Http\Controllers\RatingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\CustomerController;
-
+use Illuminate\Support\Facades\Schema;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +22,11 @@ use App\Http\Controllers\CustomerController;
 
 
 
+
+
+Route::get('/check-customers-table', function () {
+    return Schema::getColumnListing('customers');
+});
 
 
 

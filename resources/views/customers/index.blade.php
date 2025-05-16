@@ -111,7 +111,7 @@
         @forelse ($customers as $index => $customer)
             <tr>
                 <td>{{ ($page - 1) * $limit + $index + 1 }}</td>
-                <td>{{ $customer->customer_name }}</td>
+                <td>{{ $customer->name }}</td> <!-- Đã sửa lại đúng -->
                 <td>{{ $customer->phone }}</td>
                 <td>{{ $customer->email }}</td>
                 <td>{{ $customer->address }}</td>
