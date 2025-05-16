@@ -30,6 +30,7 @@ Route::get('/check-customers-table', function () {
 
 
 
+
 Route::resource('customers', CustomerController::class);
 
 

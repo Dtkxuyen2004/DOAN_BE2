@@ -45,26 +45,27 @@ class CustomerController extends Controller
         return redirect()->route('customers.index')->with('success', 'Thêm khách hàng thành công!');
     }
 
-    public function edit($id)
-    {
-        $customer = Customer::findOrFail($id);
-        return view('customers.edit', compact('customer'));
-    }
+   public function edit($id)
+{
+    $customer = Customer::findOrFail($id);
+    return view('customers.edit', compact('customer'));
+}
 
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'phone' => 'nullable|string|max:20',
-            'email' => 'nullable|email|max:255',
-            'address' => 'nullable|string|max:255',
-        ]);
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'phone' => 'nullable|string|max:20',
+        'email' => 'nullable|email',
+        'address' => 'nullable|string',
+    ]);
 
-        $customer = Customer::findOrFail($id);
-        $customer->update($request->only(['name', 'phone', 'email', 'address'])); 
+    $customer = Customer::findOrFail($id);
+    $customer->update($request->only('name', 'phone', 'email', 'address'));
 
-        return redirect()->route('customers.index')->with('success', 'Cập nhật thành công!');
-    }
+    return redirect()->route('customers.index')->with('success', 'Cập nhật thành công');
+}
+
 
     public function destroy($id)
     {
