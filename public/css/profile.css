@@ -1,0 +1,30 @@
+.btn-primary {
+    background-color: #4338ca;
+    border-color: #4338ca;
+}
+
+.btn-primary:hover {
+    background-color: #3730a3;
+    border-color: #3730a3;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+    border-color: #ef4444;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+    border-color: #dc2626;
+}
+
+.card-header {
+    background-color: #fbbf24 !important;
+    color: #000;
+}
+
+.form-control {
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
